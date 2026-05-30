@@ -7,9 +7,11 @@ This lab walks you through installing and configuring Active Directory, DNS, DHC
 
 The lab is divided into two parts:  
 
-  🔧 Lab Setup Guide
+  🔧 Lab Setup Guide  
+  
        🚧 Set up your lab environment from scratch using VirtualBox.
-  🎯 Active Directory Tasks Walkthrough
+  🎯 Active Directory Tasks Walkthrough  
+  
        💡 Practice managing users, groups, OUs, and GPOs!
 
 # Lab Network Diagram
