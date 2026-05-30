@@ -4,8 +4,9 @@ A virtual home lab setup integrating Active Directory using virtual box to under
 # Purpose of Lab
 Building a mini enterprise IT environment — all from a single machine.
 This lab walks you through installing and configuring Active Directory, DNS, DHCP, Group Policy, and more using Virtual Machine. 
-#
-The lab is divided into two parts:
+
+The lab is divided into two parts:  
+
   🔧 Lab Setup Guide
        🚧 Set up your lab environment from scratch using VirtualBox.
   🎯 Active Directory Tasks Walkthrough
