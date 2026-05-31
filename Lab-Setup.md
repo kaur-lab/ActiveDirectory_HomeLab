@@ -8,6 +8,8 @@ This step-by-step guide will walk you through building your own Active Directory
   - [🛠️ Virtual Machine Setup](#virtual-machine-setup)
   - [💽 Windows OS Installation](#windows-os-installation)
   - [🌐 Network and AD Configuration](#network-and-ad-configuration)
+  - [🌐 RAS/NAT Configuration](#ras-nat-configuration)
+  - [🌐 DHCP Configuration](#dhcp-configuration)
 - [Client Machine (CLIENT01)](#client-machine-client01)
   - [🛠️ Virtual Machine Setup](#virtual-machine-setup-client01)
   - [💽 Windows OS Installation](#windows-os-installation-client01)
@@ -193,9 +195,79 @@ This step-by-step guide will walk you through building your own Active Directory
 ![Reboot](images/lab-setup/25-add-ad.png)
 
 **We’ve just created our own domain controller! 🎉**
+---
 
+## <h2 id="ras-nat-configuration"> 🌐 RAS/NAT Configuration </h2>
+
+This will allow the client to access the internet even though when its on private virtual network.
+- Click **Add roles and features**
+ ![Add Roles and Features](images/lab-setup/18-add-ad.png)
+
+- Click through defaults until **Server Roles**.
+- Check **Remote Access**. 
+![Check AD DS](images/lab-setup/30-ras-nat.png)
+
+- Click through default until **Role Service**.
+- Check **Routing**
+![Add Service](images/lab-setup/31-ras-nat.png)
+
+- Click through remaining prompts and click `Install`.
+![Standard)](images/lab-setup/32-ras-nat.png)
+
+- Now, choose **Tools** right top corner.
+![Standard)](images/lab-setup/35-ras-nat.png)
+-Right click **DC (local)** and choose 'Configure and Enable Routing and Remote Access'
+![Standard)](images/lab-setup/33-ras-nat.png)
+-Now start the installation an choose **Network Address Translation (NAT)** in configuration window
+![Standard)](images/lab-setup/34-ras-nat.png)
+- On next window, you will see our two IP addresses that we configured earlier.
+   - Choose the internet one
+![Standard)](images/lab-setup/36-ras-nat.png)
+- Click 'Next' and then 'Finish'
+- This is finished. Now, when the client window is setup they will be able to get to internet
+![Standard)](images/lab-setup/37-ras-nat.png)
 [🔝 Back to Top](#top)
 
 ---
+
+## <h2 id="dhcp-configuration"> 🌐 DHCP Configuration </h2>
+DHCP will allow all client computers on network to automatically get their IP addresses.
+We will follow same steps that we used for installing AD DS, except this time we choose DHCP Server
+- Click **Add roles and features*
+ ![Add Roles and Features](images/lab-setup/18-add-ad.png)
+
+- Click through defaults until **Server Roles**.
+- Check **DHCP Server**. 
+![Check AD DS](images/lab-setup/38-dhcp.png)
+- CLick **Add roles** and keep on choosing default until 'Install'
+![Check AD DS](images/lab-setup/39-dhcp.png)
+Our DHCP Server is installed.
+###  Now we could setup the scope for our DHCP Server
+Now we will define scope, means, the IP address range from which DHCP will automatically assign the IPs.
+- Go to **Tools** right top corner and choose 'DHCP' from list.
+![Standard)](images/lab-setup/40-dhcp.png)
+- Right click 'IPv4' and 
+![Standard)](images/lab-setup/41-dhcp.png)
+- Give name to scope
+![Standard)](images/lab-setup/42-dhcp.png)
+- Add IP address ranges
+![Standard)](images/lab-setup/43-dhcp.png)
+- Add 'Exclusions and Delay'
+  The address that we don't want to give out
+![Standard)](images/lab-setup/44-dhcp.png)
+- 'Lease Duration'
+  The time till a machine will hold the assigned IP address
+![Standard)](images/lab-setup/45-dhcp.png)
+- 'Configure DHCP Option'
+![Standard)](images/lab-setup/47-dhcp.png)
+- 'Router (Default Gateway)'
+  Add IP address and click Add and then Next
+![Standard)](images/lab-setup/48-dhcp.png)
+- 'Domain Name and DNS Servers'
+![Standard)](images/lab-setup/49-dhcp.png)
+  Keep choosing default until Finsih
+
+- Do right click the domain name and choose 'Authorize' and then refresh it.
+ ![Standard)](images/lab-setup/46-dhcp.png)
 
 
