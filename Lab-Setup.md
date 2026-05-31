@@ -126,8 +126,7 @@ This step-by-step guide will walk you through building your own Active Directory
 - Click `OK`.
  
 [🔝 Back to Top](#top
-
---
+---
 
 ### 2. Rename PC
 - Easiest way is, right click the start menu and go to system. Then, we will click the **rename this pc**
@@ -139,6 +138,61 @@ This step-by-step guide will walk you through building your own Active Directory
 - Click `OK` again.
 - Click `Close`.
 - Click `Restart Now`
+
+[🔝 Back to Top](#top)
+---
+### 3. Install Active Directory Domain Services (AD DS)
+- Log in (obviously).
+- **Server Manager** → **Manage** → **Add Roles and Features**.
+
+![Add Roles and Features](images/lab-setup/18-add-ad.png)
+
+- Click through defaults until **Server Roles**.
+- Check **Active Directory Domain Services**. 
+
+![Check AD DS](images/lab-setup/19-add-ad.png)
+
+- Click `Add Features`.
+
+![Add Features](images/lab-setup/20-add-ad.png)
+
+- Click through remaining prompts and click `Install`. 
+  - **DO NOT CLOSE THE WINDOW!**
+
+![Install](images/lab-setup/21-add-ad.png)
+
+
+[🔝 Back to Top](#top)
+
+---
+### 4. Promote DC to Domain Controller
+- Select **Promote this server**.
+
+![Promote Server](images/lab-setup/22-add-ad.png)
+
+- And for those of you didn't pay attention to the warning about closing the window, you'll see a yellow notification like this on your Server Manager Dashboard. Click on it.
+- Click **Promote this server to a domain controller**.
+- Select **Add a new forest**.
+- Set the Root domain name to `mydomain.com`.
+
+![Domain Name](images/lab-setup/23-add-ad.png)
+
+- Set DSRM password.
+  - Write it down as we'll need it for certain recovery tasks.
+- Click `Next`.
+
+![Set DSRM Password](images/lab-setup/26-add-ad.png)
+
+- Accept defaults in the following sections and click `Install`.
+  - The yellow warnings are ok. As long as there are no actual errors you'll be fine. Trust me...
+
+![Install Forest](images/lab-setup/24-add-ad.png)
+
+- Server will reboot automatically after configuration.
+
+![Reboot](images/lab-setup/25-add-ad.png)
+
+**We’ve just created our own domain controller! 🎉**
 
 [🔝 Back to Top](#top)
 
