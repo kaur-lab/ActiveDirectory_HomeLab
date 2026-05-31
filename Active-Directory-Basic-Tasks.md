@@ -11,11 +11,11 @@ We’ll be working inside our Windows Server 2019 virtual machine and our Window
 
 - [📁 Step 1. Create Organizational Units (OUs)](#-create-organizational-units)
 - [👤 Step 2. Create User Accounts](#-create-user-accounts)
-- [👥 Step 3. Create Security Groups](#-step-1)
-- [🔗 Step 4. Add Users to Groups](#-step-2)
+- [👥 Step 3. Create Security Groups](#step-1)
+- [🔗 Step 4. Add Users to Groups](#step-2)
 - [🧠 Step 5. Move CLIENT01 into the Appropriate OU](#step-3)
-- [🖥️ Step 6. Create and Link a GPO](#-step-4)
-- [🧪 Step 7. Test the GPO](#-step-5)
+- [🖥️ Step 6. Create and Link a GPO](#step-4)
+- [🧪 Step 7. Test the GPO](#step-5)
 
 ---
 
@@ -180,16 +180,16 @@ Follow these steps:
 
 1. In **Active Directory Users and Computers**, expand your domain (`corp.local`) and click on **Computers**.
 
-![AD Users and Computers](/images/ad-tasks/29-create-gu.png)
+![AD Users and Computers](/images/ad-tasks/29-create-gpo.png)
 
 2. In the right panel, right-click `CLIENT01`, the click `Move...`.
 
-![Move CLIENT01](/images/ad-tasks/30-create-gu.png)
+![Move CLIENT01](/images/ad-tasks/30-create-gpo.png)
 
 3. Choose the `HR` OU
 4. Click `OK`.
 
-![Select HR](/images/ad-tasks/31-create-gu.png)
+![Select HR](/images/ad-tasks/31-create-gpo.png)
 
 ✅ **Why this matters:** GPOs targeting computers will only work if the computers are in the right OU. 
 
@@ -203,43 +203,43 @@ We’ll now create a **Group Policy Object (GPO)** that displays a message when 
 
 1. Open **Server Manager** → **Tools** → **Group Policy Management**.
 
-![Server Manager - Tools](/images/ad-tasks/32-create-gu.png)
+![Server Manager - Tools](/images/ad-tasks/32-create-gpo.png)
 
 2. Expand `corp.local` → `Departments`.
 3. Right-click `HR` → **Create a GPO in this domain, and Link it here...**
 
-![Create a GPO](/images/ad-tasks/33-create-gu.png)
+![Create a GPO](/images/ad-tasks/33-create-gpo.png)
 
 4. Name it: `HR Login Message`, then click OK.
 
-![Name GPO](/images/ad-tasks/34-create-gu.png)
+![Name GPO](/images/ad-tasks/34-create-gpo.png)
 
 5. Right-click the new GPO under `HR` and click `Edit`.
 
-![Edit HR GPO](/images/ad-tasks/35-create-gu.png)
+![Edit HR GPO](/images/ad-tasks/35-create-gpo.png)
 
 6. In the **Group Policy Management Editor**, navigate to:
    - **Computer Configuration** → **Policies** → **Windows Settings** → **Security Settings** → **Local Policies** → **Security Options**
 7. Find and double-click **Interactive logon: Message title for users attempting to log on**.
 
-![Interactive Logon:](/images/ad-tasks/36-create-gu.png)
+![Interactive Logon:](/images/ad-tasks/36-create-gpo.png)
 
 8. Set the title to 'HR Notice' and click `OK`.
 
-![Interactive Logon:](/images/ad-tasks/37-create-gu.png)
+![Interactive Logon:](/images/ad-tasks/37-create-gpo.png)
 
 9. Find and double-click **Interactive logon: Message text for users attempting to log on**.
 
-![Interactive Logon:](/images/ad-tasks/38-create-gu.png)
+![Interactive Logon:](/images/ad-tasks/38-create-gpo.png)
 
 10. Set the message to 'This system is for HR use only.' and click `OK`.
 
-![Set Title](/images/ad-tasks/39-create-gu.png)
+![Set Title](/images/ad-tasks/39-create-gpo.png)
 
 11. In the left panel, right-click `HR` and click **Group Policy Update...**
    - 💡 This pushes the GPO update remotely to all computers in that OU — including `CLIENT01`.
 
-![Push GPO](/images/ad-tasks/39-create-gu.png)
+![Push GPO](/images/ad-tasks/39-create-gpo.png)
 
 ✔️ This message will now show every time a user logs into CLIENT01.
 
@@ -257,7 +257,7 @@ Now let's test that the login message works.
 
 2. You should see the login message!
 
-![Login Message](/images/ad-tasks/40-create-gu.png)
+![Login Message](/images/ad-tasks/40-create-gpo.png)
 
 🎉 That’s it! The GPO is working.
 
