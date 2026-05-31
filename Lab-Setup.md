@@ -135,7 +135,7 @@ This step-by-step guide will walk you through building your own Active Directory
 ![Computer Name](images/lab-setup/16-network-setup.png)
 
 - Set Computer name to `DC` Click `Next`.
-![Rename Computer](ges/lab-setup/17-network-setup.png)
+![Rename Computer](images/lab-setup/17-network-setup.png)
 - Click `OK` again.
 - Click `Close`.
 - Click `Restart Now`
