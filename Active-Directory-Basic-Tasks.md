@@ -197,7 +197,7 @@ Follow these steps:
 
 ---
 
-## <h2 id="step-4">  🧠 Step 6. Create, Link, and Push a GPO</h2>
+## <h2 id="step-4">  🧠 Step 6. Create, Link, and Push a GPO </h2>
 
 We’ll now create a **Group Policy Object (GPO)** that displays a message when users log in. This will help confirm the GPO is working.
 
@@ -249,7 +249,7 @@ We’ll now create a **Group Policy Object (GPO)** that displays a message when 
 
 ---
 
-## <h2 id="step-5"> 🧪 Step 7. Test the GPO </h2>
+##<h2 id="step-5"> 🧪 Step 7. Test the GPO </h2>
 
 Now let's test that the login message works.
 
