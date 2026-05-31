@@ -104,6 +104,7 @@ This step-by-step guide will walk you through building your own Active Directory
 **OS: Installed.**
 
 [🔝 Back to Top](#top)
+
 ---
 
 ## <h2 id="network-and-ad-configuration"> 🌐 Network & AD Configuration </h2>
@@ -127,7 +128,8 @@ This step-by-step guide will walk you through building your own Active Directory
   - DNS: `127.0.0.1`
 - Click `OK`.
  
-[🔝 Back to Top](#top
+[🔝 Back to Top](#top)
+
 ---
 
 ### 2. Rename PC
@@ -142,6 +144,7 @@ This step-by-step guide will walk you through building your own Active Directory
 - Click `Restart Now`
 
 [🔝 Back to Top](#top)
+
 ---
 ### 3. Install Active Directory Domain Services (AD DS)
 - Log in (obviously).
@@ -305,7 +308,11 @@ Now we will define scope, means, the IP address range from which DHCP will autom
   Keep choosing default until Finsih
 
 - Do right click the domain name and choose 'Authorize' and then refresh it.
-- 
+  
  ![Standard)](images/lab-setup/46-dhcp.png)
+
+ [🔝 Back to Top](#top)
+
+---
 
 
