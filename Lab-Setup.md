@@ -10,7 +10,7 @@ This step-by-step guide will walk you through building your own Active Directory
   - [🌐 Network and AD Configuration](#network-and-ad-configuration)
   - [🌐 RAS/NAT Configuration](#ras-nat-configuration)
   - [🌐 DHCP Configuration](#dhcp-configuration)
-- [Client Machine (CLIENT01)](#client-machine-client01)
+- [Client Machine (CLIENT01)](#client-machine-setup)
   - [🛠️ Virtual Machine Setup](#virtual-machine-setup-client01)
   - [💽 Windows OS Installation](#windows-os-installation-client01)
   - [🌐 Network Configuration](#network-configuration-client01)
@@ -315,4 +315,73 @@ Now we will define scope, means, the IP address range from which DHCP will autom
 
 ---
 
+## Client Machine (CLIENT01)
+
+## <h2 id="virtual-machine-setup-client01"> 🛠️ Virtual Machine Setup </h2>
+
+### 1. Create the virtual machine (VM).
+- Open Virtual Box
+- Select **Create a New Virtual Machine**.
+- Name the virtual machine **Client01**, choose the location.
+- Choose **OS: Microsoft Windows** → **Version: Windows 11(64-bits)**.
+- Choosee the downloaded ISO for window 11.
+  
+![Name and Location](images/lab-setup/01-client-vm.png)
+
+- Hardware Customization: 
+**Base Memory**: 4000 MB (4GB) recommended, but the default may work fine depending on your system.
+- **Number of CPUs**: 2
+  
+<img src="images/lab-setup/02-client-vm.png" alt="RAM and CPU" >
+
+-Create a Virtual Hard Disk:
+ **Hard Disk Type**: Virtual Disk Image
+ 
+<img src="images/lab-setup/03-client-vm.png" alt="Virtual Disk Image" >
+
+- **Network Adapters**:
+  - Choosse 'Internal Network'.
+ 
+<img src="images/lab-setup/04-client-vm.png" alt="Add Adapter" >
+
+- Click 'Finish'
+
+[🔝 Back to Top](#top)
+
+---
+
+## <h2 id="windows-os-installation-client01"> 💽 Windows OS Installation </h2>
+
+### Installing Windows 10
+- Power on **CLIENT01**.
+- When prompted to **Press any key to boot from CD or DVD**, press any key.
+  - **REMEMBER**: Don't be a slow here!
+
+![Custom Install](images/lab-setup/12-client-vm.png)
+
+- Choose the language and click `Next`.
+
+![Custom Install](images/lab-setup/05-client-vm.png)
+
+- Select the setup option and click `Next`.
+
+![Custom Install](images/lab-setup/06-client-vm.png)
+
+- Choose 'I don't have product key' and click `Next`.
+
+![Custom Install](images/lab-setup/07-client-vm.png)
+
+- Select 'Windows 11 pro' and click `Next`.
+
+![Custom Install](images/lab-setup/08-client-vm.png)
+
+- Accept the license and  click `Next`.
+
+![Custom Install](images/lab-setup/09-client-vm.png)
+
+- Select drive and click `Next`.
+
+![Select Drive](images/os-installation/10-client-vm.png)
+
+- Click 'Install' and wait for installation to be completed.
 
