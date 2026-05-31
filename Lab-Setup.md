@@ -3,7 +3,7 @@ This step-by-step guide will walk you through building your own Active Directory
 ---
 ##<h2 id="table-of-contents"> 🗂️ Table of Contents </h2>
 
-- [⚙️ VirtualMachine Installation](#vm-installation)
+- [VirtualMachine Installation](#vm-installation)
 - [Domain Controller (DC01)](#domain-controller)
   - [🛠️ Virtual Machine Setup](#virtual-machine-setup)
   - [💽 Windows OS Installation](#windows-os-installation)
@@ -14,7 +14,7 @@ This step-by-step guide will walk you through building your own Active Directory
   - [🌐 Network Configuration](#network-configuration-client01)
   - [🧑‍💻 Join CLIENT01 to the Domain](#join-client01-to-the-domain)
 
----
+
 ## <h2 id="vm-installation"> ⚙️ Virtual Machine Installation </h2>
 
 1. Download Virtual Machine (https://www.oracle.com/virtualization/technologies/vm/downloads/virtualbox-downloads.html) from the official Oracle site.
@@ -24,8 +24,8 @@ This step-by-step guide will walk you through building your own Active Directory
 5. Run Virtual Machine normally. 
 ---
 
-## Creating Domain Controller (DC) 
---- 
+## <h2 id="domain-controller"> ⚙️Creating Domain Controller (DC) </h2>
+
 ## <h2 id="virtual-machine-setup"> 🛠️ Virtual Machine Setup </h2>
 
 ## 1. Create the Virtual Machine (VM)
@@ -58,7 +58,7 @@ This step-by-step guide will walk you through building your own Active Directory
 
 ---
 
-##<h2 id="windows-os-installation"> 💽 Windows OS Installation </h2>
+## <h2 id="windows-os-installation"> 💽 Windows OS Installation </h2>
 
 ### Installing Windows Server 2019
 - Power on **DC**.
@@ -86,5 +86,23 @@ This step-by-step guide will walk you through building your own Active Directory
 
 - Once installed, log in.
   - Click `Send Ctrl+Alt+Del to this virtual machine`.
-  - Log in. 
+  - Log in.
+ 
+- Install Guest Additions CD images.
+  - This improves performance, mouse behavior, and screen resolution.
+  - Go to **Devices** and click Install Guest Additions CD images.
+![Install VMware Tools](images/lab-setup/11-server-setup.png)
+  - Now, run the **VBoxWindowsAdditions-amd64** from D: drive
+  [Additions Tools Typical Install](images/lab-setup/12-server-setup.png)
+
+  - Click `Install`, then `Finish`.
+  - Click `Yes` to restart.
+    - There's a mandatory restart coming up in a few steps after you rename this computer, so you can hold off on restarting if you want to. Or can you...?
+
+**OS: Installed.**
+
+[🔝 Back to Top](#top)
+
+---
+
 
