@@ -381,7 +381,7 @@ Now we will define scope, means, the IP address range from which DHCP will autom
 
 - Select drive and click `Next`.
 
-![Select Drive](images/os-installation/10-client-vm.png)
+![Select Drive](images/os-installation/11-client-vm.png)
 
 - Click 'Install' and wait for installation to be completed.
 
