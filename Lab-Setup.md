@@ -15,7 +15,7 @@ This step-by-step guide will walk you through building your own Active Directory
   - [🧑‍💻 Join CLIENT01 to the Domain](#join-client01-to-the-domain)
 
 ---
-## <h2 id="vm-installation"> ⚙️ VirtualMachine Installation </h2>
+## <h2 id="vm-installation"> ⚙️ Virtual Machine Installation </h2>
 
 1. Download Virtual Machine (https://www.oracle.com/virtualization/technologies/vm/downloads/virtualbox-downloads.html) from the official Oracle site.
 2. Right click and run the installer as administrator.
@@ -26,14 +26,12 @@ This step-by-step guide will walk you through building your own Active Directory
 
 ## Creating Domain Controller (DC) 
 --- 
-##<h2 id="virtual-machine-setup"> 🛠️ Virtual Machine Setup </h2>
+## <h2 id="virtual-machine-setup"> 🛠️ Virtual Machine Setup </h2>
 
-### 1. Create the Virtual Machine (VM)
+## 1. Create the Virtual Machine (VM)
 - Open **Virtual Machine**.
-- Select **Create a New Virtual Machine**.
-  
-![Create a New Virtual Machine]
-- Name the virtual machine **DC**, choose the location.
+- Select **Create a New Virtual Machine**
+  - Name the virtual machine **DC**, choose the location.
 - Choose **OS: Microsoft Windows** → **Version: Windows Server 2019**.
 ![Name and Location](images/lab-setup/01-vm-setup.jpg)
 - Hardware Customization: 
