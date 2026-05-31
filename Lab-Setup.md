@@ -7,7 +7,7 @@ This step-by-step guide will walk you through building your own Active Directory
 - [Domain Controller (DC01)](#domain-controller)
   - [🛠️ Virtual Machine Setup](#virtual-machine-setup)
   - [💽 Windows OS Installation](#windows-os-installation)
-  - [🌐 Network and AD Configuration](#network-and-ad-configuration-dc01)
+  - [🌐 Network and AD Configuration](#network-and-ad-configuration)
 - [Client Machine (CLIENT01)](#client-machine-client01)
   - [🛠️ Virtual Machine Setup](#virtual-machine-setup-client01)
   - [💽 Windows OS Installation](#windows-os-installation-client01)
@@ -37,19 +37,19 @@ This step-by-step guide will walk you through building your own Active Directory
 - Hardware Customization: 
 **Base Memory**: 2048 MB (2GB) recommended, but the default may work fine depending on your system.
 - **Number of CPUs**: 2
-<img src="images/lab-setup/02-vm-setup.png" alt="RAM and CPU" width="448" height="450">
+<img src="images/lab-setup/02-vm-setup.png" alt="RAM and CPU" >
 -Create a Virtual Hard Disk:
  **Hard Disk Type**: Virtual Disk Image
-<img src="images/lab-setup/03-vm-setup.png" alt="Virtual Disk Image" width="448" height="450">
+<img src="images/lab-setup/03-vm-setup.png" alt="Virtual Disk Image" >
 
 - **Network Adapters**:
   - Leave the default NAT adapter.
   - Click 'Add'.
  
-<img src="images/lab-setup/04-vm-setup.png" alt="Add Adapter" width="448" height="450">
+<img src="images/lab-setup/04-vm-setup.png" alt="Add Adapter" >
 
   - Under **Adapter 2** tab, select **Internal Network**
-<img src="images/lab-setup/05-vm-setup.png" alt="Add Adapter" width="448" height="450">
+<img src="images/lab-setup/05-vm-setup.png" alt="Add Adapter" >
 - Click 'Okay'
 
   **We have just created our first virtual machine! 🎉**
@@ -77,7 +77,7 @@ This step-by-step guide will walk you through building your own Active Directory
 
 ![Select Drive](images/lab-setup/08-server-setup.png)
 
-- Now, it will take some time to install the window
+- Now, it will take some time to install the window.
 ![Installation](images/lab-setup/09-server-setup.png)
 
 - Set a strong local administrator password, then click 'Finish'.
@@ -100,6 +100,45 @@ This step-by-step guide will walk you through building your own Active Directory
     - There's a mandatory restart coming up in a few steps after you rename this computer, so you can hold off on restarting if you want to. Or can you...?
 
 **OS: Installed.**
+
+[🔝 Back to Top](#top)
+---
+
+## <h2 id="network-and-ad-configuration"> 🌐 Network & AD Configuration </h2>
+### 1. Set Static IP on DC01 (Host-Only Adapter)
+- **Control Panel** → **Network and Internet** → **Network and Sharing Center** → **Change adapter settings**.
+
+![Change Adapter Settings](images/lab-setup/14-network-setup.png)
+
+- Right-click **X_Internal_X** and click `Properties`.
+
+![Ethernet1 Properties](images/lab-setup/15-network-setup.png)
+
+- Select **Internet Protocol Version 4**, then click `Properties`.
+
+![IPv4 Properties](images/lab-setup/15.1-network-setup.png)
+
+- Use the following:
+  - IP: `172.16.0.1`
+  - Subnet: `255.255.255.0`
+  - Gateway: (leave blank)
+  - DNS: `127.0.0.1`
+- Click `OK`.
+ 
+[🔝 Back to Top](#top
+
+--
+
+### 2. Rename PC
+- Easiest way is, right click the start menu and go to system. Then, we will click the **rename this pc**
+
+![Computer Name](images/lab-setup/16-network-setup.png)
+
+- Set Computer name to `DC` Click `Next`.
+![Rename Computer](ges/lab-setup/17-network-setup.png)
+- Click `OK` again.
+- Click `Close`.
+- Click `Restart Now`
 
 [🔝 Back to Top](#top)
 
