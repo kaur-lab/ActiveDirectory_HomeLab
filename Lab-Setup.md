@@ -3,7 +3,7 @@ This step-by-step guide will walk you through building your own Active Directory
 ---
 ## <h2 id="table-of-contents"> 🗂️ Table of Contents </h2>
 
-- [⚙️ VMware Workstation Pro Installation](#vmware-workstation-pro-installation)
+- [⚙️ VirtualMachine Installation](#vm-installation)
 - [Domain Controller (DC01)](#domain-controller-dc01)
   - [🛠️ Virtual Machine Setup](#virtual-machine-setup-dc01)
   - [💽 Windows OS Installation](#windows-os-installation-dc01)
@@ -13,3 +13,13 @@ This step-by-step guide will walk you through building your own Active Directory
   - [💽 Windows OS Installation](#windows-os-installation-client01)
   - [🌐 Network Configuration](#network-configuration-client01)
   - [🧑‍💻 Join CLIENT01 to the Domain](#join-client01-to-the-domain)
+
+---
+
+## <h2 id="vm-installation"> ⚙️ VirtualMachine Installation </h2>
+
+1. Download Virtual Mchine (https://www.oracle.com/virtualization/technologies/vm/downloads/virtualbox-downloads.html) from the official Oracle site.
+2. Right click and run the installer as administrator.
+3. Leave the default installation settings unless you have specific reason to change them.
+4. Complete the installation and reboot if prompted.
+5. Run Virtual Machine normally. 
